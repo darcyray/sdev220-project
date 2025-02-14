@@ -58,3 +58,13 @@ class Recipient(models.Model):
     def __str__(self):
         return f"Distribution to {self.recipient.first_name} on {self.distribution_date.strftime('%Y-%m-%d')}"
 '''
+
+# Potential distribution item class
+''' class DistributionItem(models.Model):
+    distribution = models.ForeignKey(Distribution, on_delete=models.CASCADE)
+    inventory_item = models.ForeignKey(Inventory, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.quantity}x {self.inventory_item.item_name} (Distribution {self.distribution.id})"
+'''
